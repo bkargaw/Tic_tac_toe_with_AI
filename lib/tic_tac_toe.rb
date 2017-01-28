@@ -100,6 +100,7 @@ class TicTacToe
 
   def run
     until self.board.over?
+      system("clear")
       play_turn
     end
 
@@ -160,6 +161,7 @@ class HumanPlayer
   end
 
   private
+
   def self.valid_coord?(row, col)
     [row, col].all? { |coord| (0..2).include?(coord) }
   end
@@ -169,7 +171,7 @@ class ComputerPlayer
   attr_reader :name
 
   def initialize
-    @name = "Tandy 400"
+    @name = "dumb_computer_player"
   end
 
   def move(game, mark)
